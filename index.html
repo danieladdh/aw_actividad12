@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Alcancía Digital</title>
+</head>
+
+<body>
+    <header>
+        <h1>Alcancía Digital</h1>
+    </header>
+    <main>
+        <div id="seccSaldo">
+        <h2>Saldo actual: <span id="saldoTotal">$0.00</span></h2>
+        </div>
+        <div id="seccGeneral">
+            <div id="seccMovimiento">
+                <div id="seccAhorrar">
+                    <h2>Seleccione la cantidad a ahorrar</h2>
+                    <p id="pCantidad">$0.00</p>
+                    <div id="monedas">
+                        <button class="dineroValido" value="1">
+                            <img class="moneda" src="Images/1peso.png" alt="">
+                        </button>
+                        <button class="dineroValido" value="2">
+                            <img class="moneda" src="Images/2pesos.jpg" alt="">
+                        </button>
+                        <button class="dineroValido" value="5">
+                            <img class="moneda" src="Images/5pesos.jpg" alt="">
+                        </button>
+                        <button class="dineroValido" value="10">
+                            <img class="moneda" src="Images/10pesos.jpg" alt="">
+                        </button>
+                    </div>
+                    <div id="billetes">
+                        <button class="dineroValido" value="20">
+                            <img class="billete" src="Images/20pesos.jpg" alt="">
+                        </button>
+                        <button class="dineroValido" value="50">
+                            <img class="billete" src="Images/50pesos.jpeg" alt="">
+                        </button class="dineroValido">
+                        <button class="dineroValido" value="100">
+                            <img class="billete" src="Images/100pesos.jpg" alt="">
+                        </button>
+                        <button class="dineroValido" value="200">
+                            <img class="billete" src="Images/200pesos.jpg" alt="">
+                        </button>
+                        <button class="dineroValido" value="500">
+                            <img class="billete" src="Images/500pesos.jpg" alt="">
+                        </button>
+                    </div>
+                    <button id="btnAhorrar">Ahorrar</button>
+                </div>
+                <div id="seccRetirar">
+                    <h2>Ingrese la cantidad a retirar</h2>
+                    <input type="number" id="inCantidad" placeholder="Ejemplo: 4500">
+                    <button id="btnRetirar">Retirar</button>
+                </div>
+            </div>
+            <div id="seccResumen">
+                <h2>Historial de movimientos</h2>
+                <p id="resumen"></p>
+            </div>
+        </div>
+    </main>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>
