@@ -53,7 +53,7 @@ document.querySelectorAll(".dineroValido").forEach(boton => {
 })
 
 document.getElementById("btnAhorrar").addEventListener("click", () => {
-    if(cantidad <= 0){
+    if(isNaN(cantidad) || cantidad<=0){
         alert("Selecciona un billete");
         return;
     }
