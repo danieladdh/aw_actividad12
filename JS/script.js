@@ -22,7 +22,7 @@ class Movimiento{
         const movimiento={tipo: this.tipo, cantidad: this.cantidad, saldoActual: this.saldo};
         movimientos.push(movimiento);
         localStorage.setItem("movimientos", JSON.stringify(movimientos))
-        this.mostrarHistorial(movimientos);
+        mostrarHistorial();
     }
 
     retirar(){
@@ -36,22 +36,10 @@ class Movimiento{
             movimientos.push(movimiento);
             localStorage.setItem("movimientos", JSON.stringify(movimientos))
         }
-        this.mostrarHistorial(movimientos);
+        mostrarHistorial();
     }
 
-    mostrarHistorial(movimientos){
-        let html="";
-        movimientos.forEach((m,index) => {
-            html+=`<strong> Movimiento ${index+1} </strong> <br>
-            <strong>Tipo: </strong> ${m.tipo} <br>
-            <strong>Cantidad: </strong> $${m.cantidad} <br>
-            <strong>Saldo actual: </strong> $${m.saldoActual}
-            <hr> 
-            `
-        })
-        document.getElementById("resumen").innerHTML=html;
-        mostrarSaldoActual();
-    }
+   
 
 
 }
@@ -99,3 +87,19 @@ function mostrarSaldoActual() {
 }
 
 mostrarSaldoActual();
+
+function mostrarHistorial(){
+        let movimientos=JSON.parse(localStorage.getItem("movimientos")) || [];
+        let html="";
+        movimientos.forEach((m,index) => {
+            html+=`<strong> Movimiento ${index+1} </strong> <br>
+            <strong>Tipo: </strong> ${m.tipo} <br>
+            <strong>Cantidad: </strong> $${m.cantidad} <br>
+            <strong>Saldo actual: </strong> $${m.saldoActual}
+            <hr> 
+            `
+        })
+        document.getElementById("resumen").innerHTML=html;
+        mostrarSaldoActual();
+}
+mostrarHistorial();
